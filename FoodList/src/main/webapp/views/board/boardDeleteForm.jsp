@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="resources/boardDelete.css">
 <title>글 삭제</title>
 </head>
 
@@ -27,9 +28,11 @@ BoardDto board = dao.getBoardByNo(no);
 	
 	<form method="POST" action="BoardDelete">
 	<input type="hidden" name="no" value="<%=board.getNo()%>">
+	<div class="btn">
 	<input type="submit" value="예" name="true">
-	</form>
 	<button type="button" onclick="location.href='boardViewForm?no=<%=board.getNo()%>'">아니요</button>
+	</div>
+	</form>
 	
 </body>
 </html>

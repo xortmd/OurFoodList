@@ -42,27 +42,28 @@ if (session.getAttribute("log") != null) {
                     <th scope='col' class="th-view">조회수</th>
                 </tr>
                 </thead>
-                <%for(NoticeDto notice : list) {
+               
+                <tbody class="highlight_notice">
+                 <%for(NoticeDto notice : list) {
                 	if(notice.getHighlight() == 1){
                 %>
-                <tbody class="highlight_notice">
                 <tr>
                     <th>
-                     <a href="noticeViewForm?no=<%=notice.getNo()%>"><strong><%=notice.getTitle()%></strong></a>
+                     <a href="noticeViewForm?no=<%=notice.getNo()%>" style="color : red"><strong>[중요] <%=notice.getTitle()%></strong></a>
                     </th>
                     <td><strong><%=notice.getUser_id()%></strong></td>
-                    <td><strong><%=notice.getReg_date()%></strong></td>
+                    <td><strong><%=String.valueOf(notice.getReg_date()).split(" ")[0]%></strong></td>
                     <td><%=notice.getView_cnt()%></td>
                 </tr>
-                </tbody>
-                <%} else{%>
-                <tbody>
+                <%} 
+                 } for(NoticeDto notice : list){
+                 	if(notice.getHighlight() == 0){%>
                    <tr>
                        <th>
                          <a href="noticeViewForm?no=<%=notice.getNo()%>"><%=notice.getTitle()%></a>
                        </th>
                        <td><%=notice.getUser_id()%></td>
-                       <td><%=notice.getReg_date()%></td>
+                       <td><%=String.valueOf(notice.getReg_date()).split(" ")[0]%></td>
                        <td><%=notice.getView_cnt()%></td>
                      </tr>
                      </tbody>       

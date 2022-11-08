@@ -35,8 +35,8 @@ public class NoticeDeleteAction extends HttpServlet {
 		int no = Integer.parseInt(request.getParameter("no"));
 		dao.removeNotice(no);
 		
+	//	request.getRequestDispatcher("noticeForm").forward(request, response);
 		response.sendRedirect("noticeForm");
-		
 		
 	}
 

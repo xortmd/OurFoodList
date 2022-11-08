@@ -41,22 +41,22 @@ if(session.getAttribute("log") != null){
                 <strong>커뮤니티</strong>
                 <p>회원님의 진심을 알고 싶습니다.</p>
             </div>
-            <div class="board_write_wrap">
+            <div class="board_write_wrap" >
                 <div class="board_write">
                     <div class="title">
                         <dl>
                             <dt>제목</dt>
-                            <dd><input type="text" value="<%=board.getTitle() %>" id="title" name="title" readonly></dd>
+                            <dd><input type="text" style="border: none; outline :none" value="<%=board.getTitle() %>" id="title" name="title" readonly></dd>
                         </dl>
                     </div>
                     <div class="info">
                         <dl>
                             <dt>아이디</dt>
-                            <dd><input type="text" id="id" value="<%=board.getUser_id() %>" placeholder="" readonly></dd>
+                            <dd><input type="text" style="border: none; outline :none" id="id" value="<%=board.getUser_id() %>" readonly></dd>
                         </dl>
                         <dl>
                             <dt>작성일자</dt>
-                            <dd><input type="text" value="<%=board.getReg_date()%>" > 
+                            <dd><input type="text"  style="border: none; outline :none" value="<%=board.getReg_date()%>" > 
                                 <input type="hidden" name="no" value="<%=board.getNo()%>">
                             </dd>
                         </dl>
@@ -70,9 +70,13 @@ if(session.getAttribute("log") != null){
                    <%if(log.equals(board.getUser_id())) { %> 
                 <input type="button" onclick="location.href='boardUpdateForm?no=<%=board.getNo()%>'" value="글수정">         
                 <input type="button" onclick="location.href='boardForm'" value="돌아가기">
-                <input type="button"  value="글삭제" onclick="location.href='boardDeleteForm?no=<%=board.getNo()%>'" name="delete" >
+                <input type="button"  value="글삭제" onclick="location.href='boardDeleteForm?no=<%=board.getNo()%>'" >
+               <%} else{ %>
+            	   <input type="button" onclick="location.href='boardForm'" value="돌아가기">
                <%}
-                   }%>  
+                   } else{%>  
+                   	<input type="button" onclick="location.href='boardForm'" value="돌아가기">
+                   <%} %>
             </div>
                 </div>
             </div>

@@ -206,6 +206,59 @@ public class BoardDao {
 			}
 			return list;
 		}
+		
+		
+	// 커뮤니티 전체 조회수 구하기 (11.08 김선준 작업)
+		public int getTotalView_CntOnBoard() {
+			int totalViewBoard = 0;
+			String sql = "SELECT SUM(view_cnt) FROM notice;";
+			try {
+				this.conn = DBManager.getConnection();
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+				
+				if(this.rs.next()) {
+					totalViewBoard = this.rs.getInt(1);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					this.rs.close();
+					this.pstmt.close();
+					this.conn.close();
+				} catch (SQLException e2) {
+					e2.printStackTrace();
+				}
+			}
+			return totalViewBoard;
+		}
+		
+		// 커뮤니티 전체 조회수 구하기 (11.08 김선준 작업)
+		public int getTotalCountOnBoard() {
+			int totalcountBoard = 0;
+			String sql = "SELECT COUNT(no) FROM board;";
+			try {
+				this.conn = DBManager.getConnection();
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+				
+				if(this.rs.next()) {
+					totalcountBoard = this.rs.getInt(1);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					this.rs.close();
+					this.pstmt.close();
+					this.conn.close();
+				} catch (SQLException e2) {
+					e2.printStackTrace();
+				}
+			}
+			return totalcountBoard;
+		}
 	
 
 	// Update
@@ -263,6 +316,8 @@ public class BoardDao {
 			}
 		}
 	}
+	
+	
 
 	// Delete
 	public void removeMember(int no) {

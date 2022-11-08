@@ -1,3 +1,6 @@
+<%@page import="review.ReviewDao"%>
+<%@page import="user.UserDao"%>
+<%@page import="notice.NoticeDao"%>
 <%@page import="restaurant.RestaurantDao"%>
 <%@page import="restaurant.RestaurantDto"%>
 <%@page import="board.BoardDto"%>
@@ -26,6 +29,14 @@
 	
 	RestaurantDao rDao = RestaurantDao.getInstance();
 	ArrayList<RestaurantDto> allList = rDao.getRestaurantAll();
+	
+	BoardDao bDao = BoardDao.getInstance();
+	NoticeDao nDao = NoticeDao.getInstance();
+	UserDao uDao = UserDao.getInstance();
+	ReviewDao vDao = ReviewDao.getInstance(); 
+	
+	
+	int totalView = nDao.getTotalView_CntOnNotice() + bDao.getTotalView_CntOnBoard();
 	%>
 	<div class="wrap">
 		<div class="intro_bg">
@@ -66,26 +77,26 @@
 	<ul class="amount">
 		<li>
 			<div>
-				<div class="contents1">지금까지 사용한 돈</div>
-				<div class="result">$128,021</div>
+				<div class="contents1">등록된 가게 수</div>
+				<div class="result"><%=rDao.getCountRestaurant()%></div>
 			</div>
 		</li>
 		<li>
 			<div>
-				<div class="contents1">오늘 들어온 수</div>
-				<div class="result">93,234</div>
+				<div class="contents1">등록된 리뷰 수</div>
+				<div class="result"><%=vDao.getReviewCount() %></div>
 			</div>
 		</li>
 		<li>
 			<div>
 				<div class="contents1">전체 조회 수</div>
-				<div class="result">100,000+</div>
+				<div class="result"><%=totalView%></div>
 			</div>
 		</li>
 		<li>
 			<div>
 				<div class="contents1">전체 회원 이용 수</div>
-				<div class="result">57,221,084</div>
+				<div class="result"><%=uDao.getCountUser()%></div>
 			</div>
 		</li>
 	</ul>

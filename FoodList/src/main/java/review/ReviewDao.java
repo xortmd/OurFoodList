@@ -142,7 +142,7 @@ public class ReviewDao {
 		return reviewlist;
 	}
 	
-	//RestoCode의 리뷰 불러오기
+	//RestoCode의 리뷰 불러오기 
 	public ArrayList<ReviewDto> getReviewAllByRestoCode(int resto_code){
 		ArrayList<ReviewDto> reviewlist = new ArrayList<ReviewDto>();
 		String sql = "SELECT * FROM review WHERE resto_code = ?";
@@ -261,6 +261,35 @@ public class ReviewDao {
 		}
 		return review;
 	}
+	
+	//review의 개수 구하기 (11.08 김선준 작업)
+		public int getReviewCount() {
+			int reviewCount = 0;
+			String sql = "SELECT COUNT(`no`) FROM review";
+			
+			try {
+				this.conn = DBManager.getConnection();
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+				
+				if(this.rs.next()) {
+					reviewCount = this.rs.getInt(1);
+				}
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					this.rs.close();
+					this.conn.close();
+					this.pstmt.close();
+				} catch (SQLException e2) {
+					e2.printStackTrace();
+				}
+			}
+			return reviewCount;
+		}
 	
 	//give_grade의 평균값 구하기
 		public double getReviewForAVGgrade(int resto_code) {

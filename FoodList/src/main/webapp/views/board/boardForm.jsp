@@ -1,3 +1,5 @@
+<%@page import="notice.NoticeDto"%>
+<%@page import="notice.NoticeDao"%>
 <%@page import="board.BoardDto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="board.BoardDao"%>
@@ -17,6 +19,8 @@
 <%
 BoardDao dao = BoardDao.getInstance();
 ArrayList<BoardDto> list = dao.getBoardAll();
+NoticeDao Ndao = NoticeDao.getInstance();
+ArrayList<NoticeDto> nlist = Ndao.getNoticeAll();
 
 String log = null;
 if (session.getAttribute("log") != null) {
@@ -32,6 +36,7 @@ if (session.getAttribute("log") != null) {
   <!-- board list area -->
     <div id="board-list">
         <div class="container">
+        <p>전체 게시글 수 : <%=dao.getTotalCountOnBoard()%></p>
             <table class="board-table">
                 <thead>
                 <tr>
@@ -41,14 +46,27 @@ if (session.getAttribute("log") != null) {
                     <th scope='col' class="th-view">조회수</th>
                 </tr>
                 </thead>
-                <%for(BoardDto board : list) {%>
+                
                 <tbody>
+                <%for(NoticeDto notice : nlist){
+                	if(notice.getHighlight() == 1) {%>
+                	<tr>
+                    <th class="noticeInBoard">
+                      <a href="noticeViewForm?no=<%=notice.getNo()%>" style="color : red">[중요] <%=notice.getTitle()%></a>
+                    </th>
+                    <td><strong><%=notice.getUser_id() %></strong></td>
+                    <td><strong><%=String.valueOf(notice.getReg_date()).split(" ")[0]%></strong></td>
+                    <td><strong><%=notice.getView_cnt() %></strong></td>
+                </tr> 	
+                <% }
+                }%>
+                <%for(BoardDto board : list) {%>
                 <tr>
                     <th>
                       <a href="boardViewForm?no=<%=board.getNo()%>"><%=board.getTitle()%></a>
                     </th>
                     <td><%=board.getUser_id() %></td>
-                    <td><%=board.getReg_date()%></td>
+                    <td><%=String.valueOf(board.getReg_date()).split(" ")[0]%></td>
                     <td><%=board.getView_cnt() %></td>
                 </tr>
                 </tbody>

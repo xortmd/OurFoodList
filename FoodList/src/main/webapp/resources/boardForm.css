@@ -55,12 +55,18 @@ section.notice {
 	font-size: 16px;
 }
 
+.noticeInBoard {
+	font-weight : bold;
+	color : red;
+}
+
 .board-table {
 	font-size: 13px;
 	width: 100%;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 }
+
 
 .board-table a {
 	color: #333;
@@ -106,11 +112,12 @@ section.notice {
 .board-table tbody th p {
 	display: none;
 }
-
 .button{
-	position:flex;
+	margin-bottom: 50px;
+    margin-right : 50px;
 	width: 50px
 }
+
 
 /* reset */
 * {
@@ -142,16 +149,15 @@ section.notice {
 }
 button{
 	text-align: center;
-	font-size: 0;
-	height: 52px;
-	width: 90px;
-	background-color: #03c75a;
+	height: 30px;
+	width: 40px;
+	background-color: rgb(255, 86, 34);
 	color: #fff;
 	cursor: pointer;
-	font-size: 20px;
+	font-size: 15px;
 	min-width: 80px;
-	margin-left: 1160px;
-	border: 1px solid #000;
-	border-radius: 2px;
+	margin-left: 1400px;
+	border: none;
+	border-radius: 20px;
 }
 

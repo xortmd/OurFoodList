@@ -37,13 +37,9 @@ public class BoardUpdateAction extends HttpServlet {
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		BoardDao dao = BoardDao.getInstance();
-		String user_id = request.getParameter("user_id");
-
 		int no = Integer.parseInt(request.getParameter("no"));
 		String title = request.getParameter("title");
-		String content = request.getParameter("content");
-		Timestamp now = new Timestamp(System.currentTimeMillis());
-		
+		String content = request.getParameter("content");		
 
 		BoardDto board = new BoardDto(title, content, no);
 		dao.updateBoard(board);	
@@ -53,7 +49,7 @@ public class BoardUpdateAction extends HttpServlet {
 		//	System.out.println("글 수정 실패");
 		//	}
 
-		request.getRequestDispatcher("boardForm").forward(request, response);
+		response.sendRedirect("boardForm");
 
 	}
 

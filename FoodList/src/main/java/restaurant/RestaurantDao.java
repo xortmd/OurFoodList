@@ -191,6 +191,33 @@ public class RestaurantDao {
 		return restaurant;
 	}
 	
+	// 레스토랑 개수 구하기 (11.08 김선준 작업)
+	public int getCountRestaurant() {
+		int countRes = 0;
+		String sql = "SELECT COUNT(code) FROM `restaurant`";
+		
+		try {
+			this.conn = DBManager.getConnection();
+			this.pstmt = this.conn.prepareStatement(sql);
+			this.rs = this.pstmt.executeQuery();
+			
+			if(this.rs.next()) {
+				countRes = this.rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				this.rs.close();
+				this.pstmt.close();
+				this.conn.close();
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+		}
+		return countRes;
+	}
+	
 	
 	
 	// Update

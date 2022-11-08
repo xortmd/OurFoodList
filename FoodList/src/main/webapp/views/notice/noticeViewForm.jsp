@@ -26,6 +26,8 @@ dao.addViewCnt(no);
 <jsp:include page="/views/header.jsp"/>
 <body>
 <%
+
+
 String log = null;
 if(session.getAttribute("log") != null){
 	log = (String)session.getAttribute("log");
@@ -43,18 +45,18 @@ if(session.getAttribute("log") != null){
                     <div class="title">
                         <dl>
                             <dt>제목</dt>
-                            <dd><input type="text" placeholder="제목을 입력해주세요." value="<%=notice.getTitle() %>" id="title" name="title" readonly></dd>
+                            <dd><input type="text" style="border: none; outline :none" placeholder="제목을 입력해주세요." value="<%=notice.getTitle() %>" id="title" name="title" readonly></dd>
                         </dl>
                     </div>
                     <div class="info">
                         <dl>
                             <dt>아이디</dt>
-                            <dd><input type="text" id="id" name="user_id" value="<%=notice.getUser_id() %>" placeholder="" readonly></dd>
+                            <dd><input type="text" id="id" style="border: none; outline :none" name="user_id" value="<%=notice.getUser_id() %>" placeholder="" readonly></dd>
                         </dl>
                         <dl>
                             <dt>작성일자</dt>
-                            <dd><input type="text" value="<%=notice.getReg_date()%>" > 
--                                <input type="hidden" name="no" value="<%=notice.getNo()%>">
+                            <dd><input type="text"  style="border: none; outline :none" value="<%=String.valueOf(notice.getReg_date()).split(" ")[0]%>" > 
+                                <input type="hidden" name="no" value="<%=notice.getNo()%>">
                             </dd>
                         </dl>
                     </div>
@@ -67,16 +69,21 @@ if(session.getAttribute("log") != null){
                    <%if(log.equals("realadmin")) { %> 
                 <input type="button" onclick="location.href='noticeUpdateForm?no=<%=notice.getNo()%>'" value="글수정">         
                 <input type="button" onclick="location.href='noticeForm'" value="돌아가기">
-                <input type="button"  value="글삭제" onclick="location.href='noticeDeleteForm?no=<%=notice.getNo()%>'" name="delete" >
+                <input type="button"  value="글삭제" onclick="location.href='noticeDeleteForm?no=<%=notice.getNo()%>'" name="delete">
                <%} else{%>
                    <input type="button" onclick="location.href='noticeForm'" value="돌아가기">
 
                   <% }
-                   }%>  
+                   } else {%>  
+                   <input type="button" onclick="location.href='noticeForm'" value="돌아가기">
+                   <%} %>
             </div>
                 </div>
             </div>
 
     </form>
+    
+    
+
 </body>
 </html>

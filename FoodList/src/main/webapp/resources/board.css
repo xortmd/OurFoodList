@@ -31,16 +31,16 @@
 }
 
 .bt_wrap input {
-	height: 52px;
-	width: 90px;
-	background-color: #03c75a;
+	height: 50px;
+	width: 70px;
+	background-color: rgb(255, 86, 34);
 	color: #fff;
 	cursor: pointer;
-	font-size: 20px;
+	font-size: 15px;
 	min-width: 80px;
 	margin-left: 10px;
-	border: 1px solid #000;
-	border-radius: 2px;
+	border: none;
+	border-radius: 20px;
 }
 
 .bt_wrap input:first-child {
@@ -99,6 +99,11 @@
 
 .board_write .cont {
 	border-bottom: 1px solid #000;
+}
+
+
+input #title {
+	outline : none;
 }
 
 .board_write .cont input {

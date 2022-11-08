@@ -26,12 +26,12 @@ if (session.getAttribute("log") != null) {
                 <strong>커뮤니티</strong>
                 <p>회원님의 진심을 알고 싶습니다.</p>
             </div>
-            <div class="board_write_wrap">
+            <div class="board_write_wrap" >
                 <div class="board_write">
                     <div class="title">
                         <dl>
                             <dt>제목</dt>
-                            <dd><input type="text" placeholder="제목을 입력해주세요." name="title" required></dd>
+                            <dd><input type="text"  placeholder="제목을 입력해주세요." name="title" required></dd>
                         </dl>
                     </div>
                     <div class="info">

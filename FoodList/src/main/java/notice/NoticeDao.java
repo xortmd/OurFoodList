@@ -177,6 +177,34 @@ public class NoticeDao {
 		return notice;
 	}
 	
+	// notice의 전체 조회수 구하기 (11.08 김선준 작업)
+
+	public int getTotalView_CntOnNotice() {
+		int totalViewNotice = 0;
+		String sql = "SELECT SUM(view_cnt) FROM notice;";
+		try {
+			this.conn = DBManager.getConnection();
+			this.pstmt = this.conn.prepareStatement(sql);
+			this.rs = this.pstmt.executeQuery();
+			
+			if(this.rs.next()) {
+				totalViewNotice = this.rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				this.rs.close();
+				this.pstmt.close();
+				this.conn.close();
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+		}
+		return totalViewNotice;
+	}
+
+	
 	// 3. Update
 	public void updateNotice(NoticeDto notice) {
 		
@@ -192,8 +220,8 @@ public class NoticeDao {
 			this.pstmt = this.conn.prepareStatement(sql);
 			this.pstmt.setString(1, title);
 			this.pstmt.setString(2, content);
-			this.pstmt.setInt(3, no);
-			this.pstmt.setInt(4, highlight);
+			this.pstmt.setInt(3, highlight);
+			this.pstmt.setInt(4, no);
 			this.pstmt.execute();
 			
 			

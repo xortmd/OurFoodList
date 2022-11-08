@@ -45,7 +45,7 @@ public class NoticeUpdateAction extends HttpServlet {
 		NoticeDto notice = new NoticeDto(no, title, content, highlight);
 		dao.updateNotice(notice);
 		
-		//request.getRequestDispatcher("noticeForm").forward(request, response);
+//		request.getRequestDispatcher("noticeForm").forward(request, response);
 		response.sendRedirect("noticeForm");
 		System.out.println("UPDATE SUCCESS!!!!!");
 	}
