@@ -1,4 +1,4 @@
-document.getElementById(a).style.color= "blue";
+
 function printResult() {
 	$('.title').empty();
 	$('.container').empty();	
@@ -20,40 +20,38 @@ function printResult() {
 		const list = JSON.parse(response);
 		
 		$('.title').append(
-			`<dl>
-				<dt>가게명</dt>
-				<dt>가게주소</dt>
-				<dt>전화번호</dt>
-				<dt>음식종류</dt>
-				<dt>작성일자</dt>
-				<dt>평점</dt>
-				<dt>좋아요 개수</dt>
-				<dt>리뷰 개수</dt>
-			</dl>`
+			`<tr>
+				<th>가게명</th>
+				<th>전화번호</th>
+				<th>음식종류</th>
+				<th>작성일자</th>
+				<th>평점</th>
+				<th>좋아요</th>
+				<th>리뷰</th>
+			</tr>`
 		);
 		
 		list.forEach(e => {
             const code = e.code;
             const res_name = e.res_name;
-            const address = e.address;
-            const res_phone = e.res_phone;
+			const res_phone = e.res_phone;
             const kind = e.kind;
-            const reg_date = e.reg_date;
+            const str = e.reg_date;
+            const reg_date = str.substring(0, 10);
             const ave_grade = e.ave_grade;
             const like_cnt = e.like_cnt;
             const review_cnt = e.review_cnt;
 
             $('.container').append(
-                `<dl>
-					<dt><a href="restaurantViewForm?code=${code}">${res_name}</a></dt>
-					<dt>${address}</dt>
-					<dt>${res_phone}</dt>
-					<dt>${kind}</dt>
-					<dt>${reg_date}</dt>
-					<dt>${ave_grade}</dt>
-					<dt>${like_cnt}</dt>
-					<dt>${review_cnt}</dt>
-				</dl>`
+                `<tr>
+					<td><a href="restaurantViewForm?code=${code}">${res_name}</a></td>
+					<td>${res_phone}</td>
+					<td>${kind}</td>
+					<td>${reg_date}</td>
+					<td>${ave_grade}</td>
+					<td>${like_cnt}</td>
+					<td>${review_cnt}</td>
+				</tr>`
             );
         });
     });

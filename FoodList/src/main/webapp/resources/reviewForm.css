@@ -1,7 +1,69 @@
-@charset "UTF-8";
+.review_box {
+	text-align: center;
+}
 
-body{margin: 0; padding: 0;}
-li{list-style: none}
-a{text-decoration: none; color: black;}
-ul,h1,h2,h3,h4,h5,h6{margin:0; padding: 0;}
-button{outline: none; border: none; background: transtparent; cursor: pointer;}
+.review_box>form {
+	display: inline-block;
+	margin: 30px 0;
+	width: 1115px;
+	background-color: #fff;
+	border-radius: 20px;
+	border: 1px solid #ddd;
+	padding: 20px;
+}
+
+hr {
+	width: 1160px;
+	margin: 30px;
+	display: inline-block;
+}
+
+textarea {
+	width: 1050px;
+	height: 100px;
+	margin: 20px;
+	font-size: 20px;
+	border-radius: 10px;
+	background-color: rgb(247, 247, 247);
+	padding: 20px;
+	border: none;
+}
+
+#give_grade {
+	width: 200px;
+	height: 36px;
+	font-size: 20px;
+	border-radius: 10px;
+}
+
+#user_id {
+	width: 150px;
+	margin-left: 50px;
+	height: 30px;
+	font-size: 20px;
+	border: none;
+	border-bottom: solid 1px black;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	text-align: center;
+}
+
+.button>input {
+	width: 200px;
+	height: 30px;
+	font-size: 20px;
+	border: none;
+	background-color: rgb(255, 50, 0);
+	color: #fff;
+	border-radius: 20px;
+}
+
+p {
+	font-size: 20px;
+	margin: 10px 30px;
+	text-align: left;
+}
+
+span {
+	font-weight: bold;
+}

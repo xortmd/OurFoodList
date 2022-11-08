@@ -8,7 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="resources/gageRanking.css">
 </head>
+<jsp:include page="/views/header.jsp"/>
 <body>
 	<%
 	request.setCharacterEncoding("UTF-8");
@@ -17,28 +19,29 @@
 	String sort = request.getParameter("sort");
 	ArrayList<RestaurantDto> list = dao.sortRestaurant(allList, sort);
 	%> 
-	<div>
-        <table border="1">
+	<div class="search_box">
+        <table>
 			<thead>
 				<tr>
 					<th>가게명</th>
-					<th>가게주소</th>
 					<th>전화번호</th>
 					<th>음식종류</th>
 					<th>작성일자</th>
 					<th>평점</th>
-					<th>좋아요 개수</th>
-					<th>리뷰 개수</th>
+					<th>좋아요</th>
+					<th>리뷰</th>
 				</tr>
 			</thead>
 			<tbody>
-				<%for(RestaurantDto restaurant : list) {%>
+				<%
+				for(RestaurantDto restaurant : list) {
+				String date = String.valueOf(restaurant.getReg_date());
+				%>
 				<tr>
 					<td><a href="restaurantViewForm?code=<%=restaurant.getCode()%>"><%=restaurant.getRes_name()%></a></td>
-					<td><%=restaurant.getAddress()%></td>
 					<td><%=restaurant.getRes_phone()%></td>
 					<td><%=restaurant.getKind()%></td>
-					<td><%=restaurant.getReg_date()%></td>
+					<td><%=date.substring(0, 10)%></td>
 					<td><%=restaurant.getAve_grade()%></td>
 					<td><%=restaurant.getLike_cnt()%></td>
 					<td><%=restaurant.getReview_cnt()%></td>

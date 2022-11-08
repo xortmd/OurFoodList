@@ -36,7 +36,6 @@ public class RestaurantSearchAction extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		request.setCharacterEncoding("UTF-8");
 		String kind = request.getParameter("kind");
         String area = request.getParameter("area");
         String sort = request.getParameter("sort");
