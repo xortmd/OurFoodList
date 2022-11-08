@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>FoodList</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 서블릿 -->
+  
+  	<servlet>
+		<servlet-name>Service</servlet-name>
+		<servlet-class>controller.ServiceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Service</servlet-name>
+		<url-pattern>/Service</url-pattern>
+	</servlet-mapping>
+  
+  <servlet>
+		<servlet-name>Join</servlet-name>
+		<servlet-class>controller.JoinAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Join</servlet-name>
+		<url-pattern>/Join</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>JoinCheck</servlet-name>
+		<servlet-class>controller.JoinCheckAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JoinCheck</servlet-name>
+		<url-pattern>/JoinCheck</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LoginCheck</servlet-name>
+		<servlet-class>controller.LoginCheckAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginCheck</servlet-name>
+		<url-pattern>/LoginCheck</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>controller.LoginAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BoardWrite</servlet-name>
+		<servlet-class>controller.BoardWriteAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardWrite</servlet-name>
+		<url-pattern>/BoardWrite</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BoardUpdate</servlet-name>
+		<servlet-class>controller.BoardUpdateAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardUpdate</servlet-name>
+		<url-pattern>/BoardUpdate</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BoardDelete</servlet-name>
+		<servlet-class>controller.BoardDeleteAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardDelete</servlet-name>
+		<url-pattern>/BoardDelete</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>NoticeWrite</servlet-name>
+		<servlet-class>controller.NoticeWriteAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NoticeWrite</servlet-name>
+		<url-pattern>/NoticeWrite</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>NoticeUpdate</servlet-name>
+		<servlet-class>controller.NoticeUpdateAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NoticeUpdate</servlet-name>
+		<url-pattern>/NoticeUpdate</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>NoticeDelete</servlet-name>
+		<servlet-class>controller.NoticeDeleteAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NoticeDelete</servlet-name>
+		<url-pattern>/NoticeDelete</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+
+	<servlet>
+		<servlet-name>ReviewWrite</servlet-name>
+		<servlet-class>controller.ReviewWriteAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReviewWrite</servlet-name>
+		<url-pattern>/ReviewWrite</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RestaurantCreate</servlet-name>
+		<servlet-class>controller.RestaurantCreateAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RestaurantCreate</servlet-name>
+		<url-pattern>/RestaurantCreate</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RestaurantSearch</servlet-name>
+		<servlet-class>controller.RestaurantSearchAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RestaurantSearch</servlet-name>
+		<url-pattern>/RestaurantSearch</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserUpdate</servlet-name>
+		<servlet-class>controller.UserUpdateAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserUpdate</servlet-name>
+		<url-pattern>/UserUpdate</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UserDelete</servlet-name>
+		<servlet-class>controller.UserDeleteAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserDelete</servlet-name>
+		<url-pattern>/UserDelete</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Like</servlet-name>
+		<servlet-class>controller.LikeAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Like</servlet-name>
+		<url-pattern>/Like</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Review</servlet-name>
+		<servlet-class>controller.ReviewAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Review</servlet-name>
+		<url-pattern>/Review</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Board</servlet-name>
+		<servlet-class>controller.BoardAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Board</servlet-name>
+		<url-pattern>/Board</url-pattern>
+	</servlet-mapping>
+  
+  
+  
+  
+  <!-- JSP -->
+	<servlet>
+		<servlet-name>index</servlet-name>
+		<jsp-file>/index.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>index</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>loginForm</servlet-name>
+		<jsp-file>/views/login/loginForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginForm</servlet-name>
+		<url-pattern>/loginForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>logout</servlet-name>
+		<jsp-file>/views/login/logout.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>joinForm</servlet-name>
+		<jsp-file>/views/join/joinForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>joinForm</servlet-name>
+		<url-pattern>/joinForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>boardForm</servlet-name>
+		<jsp-file>/views/board/boardForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardForm</servlet-name>
+		<url-pattern>/boardForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>boardViewForm</servlet-name>
+		<jsp-file>/views/board/boardViewForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardViewForm</servlet-name>
+		<url-pattern>/boardViewForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>boardWriteForm</servlet-name>
+		<jsp-file>/views/board/boardWriteForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardWriteForm</servlet-name>
+		<url-pattern>/boardWriteForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>boardUpdateForm</servlet-name>
+		<jsp-file>/views/board/boardUpdateForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardUpdateForm</servlet-name>
+		<url-pattern>/boardUpdateForm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>boardDeleteForm</servlet-name>
+		<jsp-file>/views/board/boardDeleteForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardDeleteForm</servlet-name>
+		<url-pattern>/boardDeleteForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>myPageForm</servlet-name>
+		<jsp-file>/views/my/myPageForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myPageForm</servlet-name>
+		<url-pattern>/myPageForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>myLike</servlet-name>
+		<jsp-file>/views/my/myLike.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myLike</servlet-name>
+		<url-pattern>/myLike</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>myReview</servlet-name>
+		<jsp-file>/views/my/myReview.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myReview</servlet-name>
+		<url-pattern>/myReview</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>myBoard</servlet-name>
+		<jsp-file>/views/my/myBoard.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myBoard</servlet-name>
+		<url-pattern>/myBoard</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>myDeleteForm</servlet-name>
+		<jsp-file>/views/my/myDeleteForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myDeleteForm</servlet-name>
+		<url-pattern>/myDeleteForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>restaurantViewForm</servlet-name>
+		<jsp-file>/views/restaurant/restaurantViewForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>restaurantViewForm</servlet-name>
+		<url-pattern>/restaurantViewForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>restaurantCreateForm</servlet-name>
+		<jsp-file>/views/restaurant/restaurantCreateForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>restaurantCreateForm</servlet-name>
+		<url-pattern>/restaurantCreateForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>restaurantSearchForm</servlet-name>
+		<jsp-file>/views/restaurant/restaurantSearchForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>restaurantSearchForm</servlet-name>
+		<url-pattern>/restaurantSearchForm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>rankingViewForm</servlet-name>
+		<jsp-file>/views/ranking/rankingViewForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>rankingViewForm</servlet-name>
+		<url-pattern>/rankingViewForm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>noticeForm</servlet-name>
+		<jsp-file>/views/notice/noticeForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>noticeForm</servlet-name>
+		<url-pattern>/noticeForm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>noticeDeleteForm</servlet-name>
+		<jsp-file>/views/notice/noticeDeleteForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>noticeDeleteForm</servlet-name>
+		<url-pattern>/noticeDeleteForm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>noticeUpdateForm</servlet-name>
+		<jsp-file>/views/notice/noticeUpdateForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>noticeUpdateForm</servlet-name>
+		<url-pattern>/noticeUpdateForm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>noticeViewForm</servlet-name>
+		<jsp-file>/views/notice/noticeViewForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>noticeViewForm</servlet-name>
+		<url-pattern>/noticeViewForm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>noticeWriteForm</servlet-name>
+		<jsp-file>/views/notice/noticeWriteForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>noticeWriteForm</servlet-name>
+		<url-pattern>/noticeWriteForm</url-pattern>
+	</servlet-mapping>
+
+<!-- <servlet> -->
+<!-- 		<servlet-name>noticeWriteForm</servlet-name> -->
+<!-- 		<jsp-file>/noticeWriteForm.jsp</jsp-file> -->
+<!-- 	</servlet> -->
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>noticeWriteForm</servlet-name> -->
+<!-- 		<url-pattern>/noticeWriteForm</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+	
+	<servlet>
+		<servlet-name>reviewForm</servlet-name>
+		<jsp-file>/views/review/reviewForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reviewForm</servlet-name>
+		<url-pattern>/reviewForm</url-pattern>
+	</servlet-mapping>
+</web-app>
