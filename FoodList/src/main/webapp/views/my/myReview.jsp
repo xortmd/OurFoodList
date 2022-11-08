@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="resources/myPageForm.css">
+	<link rel="stylesheet" href="resources/myBoard.css">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title>Insert title here</title>
@@ -23,6 +23,7 @@
 	<nav>
 		<jsp:include page="/views/my/sidebar.jsp" />
 	</nav>
+	<h1 class="nameboard">My Review</h1>
 	<section class="updateUser">
 		<div>
 		<input type="hidden" class="id" name="id" value="<%=log%>">

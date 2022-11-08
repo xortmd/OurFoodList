@@ -21,7 +21,6 @@ console.log("id : " + id);
 	if(list != null){
 	    $('.title').append(
 	        `<tr>
-					<th>번호</th>
 					<th>제목</th>
 					<th>등록일</th>
 					<th>수정일</th>
@@ -43,7 +42,6 @@ console.log("id : " + id);
 	
 	        $('.container').append(
 	            `<tr>
-	                <td>${no}</td>
 	                <td><a href="boardViewForm?no=${no}">${title}</a></td>
 	                <td>${reg_date}</td>
 	                <td>${mod_date}</td>

@@ -11,7 +11,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    background-color: #76c776;
+    background-color: rgb(255, 86, 34);
     padding: 8px 12px;
 }
 .navbar1_logo{
