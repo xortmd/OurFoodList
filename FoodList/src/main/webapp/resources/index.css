@@ -158,11 +158,13 @@
   .more{
     width:100px;
     height: 30px;
-    background: #2F7AF4;
+    background: rgb(255, 50, 0);
     color: #fff;
     font-size: 12px;
     line-height: 30px;
     margin:25px auto;
+    border-radius: 10px;
+    border: none;
   }
   
   /* main_text1*/

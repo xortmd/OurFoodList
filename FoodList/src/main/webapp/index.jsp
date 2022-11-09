@@ -49,7 +49,11 @@
 				<ul class="nav">
 <!-- 					<li><a href="ex05.html">HOME</a></li> -->
 					<li><a href="restaurantSearchForm">맛집찾기</a></li>
+					<%
+					if(log != null) {
+					%>
 					<li><a href="restaurantCreateForm">맛집등록</a></li>
+					<%} %>
 					<li><a href="boardForm">커뮤니티</a></li>
 					<li><a href="noticeForm">공지사항</a><li>
 					<%
