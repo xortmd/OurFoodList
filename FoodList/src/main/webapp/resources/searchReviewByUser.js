@@ -30,7 +30,7 @@ $.ajax({
 
 		list.forEach(e => {
 			const no = e.no;
-			const resto_code = e.resto_code;
+			const code = e.resto_code;
 			const res_name = e.user_id;		// 아이디는 굳이 필요 없으니까 여기에 레스토랑 이름 담아가지고 옴
 			const comment = e.coment;
 			const reg_date = e.reg_date.split(" ")[0];
@@ -39,7 +39,7 @@ $.ajax({
 
 			$('.container').append(
 				`<tr>
-                <td><a href="restaurantViewForm?resto_code=${resto_code}">${res_name}</a></td>
+                <td><a href="restaurantViewForm?code=${code}">${res_name}</a></td>
                 <td>${comment}</td>
                 <td>${reg_date}</td>
                 <td>${give_grade}</td>

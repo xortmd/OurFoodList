@@ -74,7 +74,7 @@
 					<div class="phone" style="margin-top: 25px">
 						<label>연락처</label>
 						<input type="text" class="phoneNew" name="phone" value="<%=user.getPhone()%>" placeholder="010-xxxx-xxxx"><br>
-						<input type="hidden" class="phone" value="<%=user.getPhone()%>" >
+						<input type="hidden" class="phoneOri" value="<%=user.getPhone()%>" >
 					</div>
 					<font id="checkPhone" size=2></font>
 

@@ -136,7 +136,9 @@ $('.phoneNew').focusout(function() {
 					$('#checkPhone').html('사용 가능한 연락처입니다');
 					$('#checkPhone').attr('color', 'green');
 				} else {						// 중복
-					if(phone === $('.phone').val()){
+					console.log("새 폰 : " + phone);
+					console.log("기존 등록 폰 : " + $('.phoneOri').val());
+					if(phone === $('.phoneOri').val()){
 						phoneOk = true;
 						$('#checkPhone').html('');
 					}else{
@@ -171,6 +173,7 @@ function checkUpdate(form){
 	
 	if(!(password === $('.password').val() && goToUpdate) && phoneOk){
 		console.log("이제 진짜 간다?!!?!?!?");
+		alert("수정이 완료되었습니다.");
 		form.submit();
 	}	
 }

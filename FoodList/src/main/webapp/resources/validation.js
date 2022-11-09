@@ -142,12 +142,14 @@ $('.phone').focusout(function() {
 let birthOk = false;
 $('.birth').focusout(function() {
 	console.log("생년월일에서 포커스아웃 발생");
+	let birthString = $('.birth').val();
 	let birth = new Date($('.birth').val());
 	console.log("birth : " + birth);
+	console.log("birthString : " + birthString);
 	const dateNow = new Date();
 	console.log("오늘 날짜 : " + dateNow.toString());
 
-	if (birth == "") {
+	if (birthString == "") {
 		$("#checkBirth").html("생년월일을 입력하세요");
 		$('#checkBirth').attr('color', 'red');
 	} else {
@@ -163,22 +165,6 @@ $('.birth').focusout(function() {
 	}
 })
 
-//function chkCharCode(event) {
-//	const keyCode = event.keyCode;
-//	console.log("keyCode : " + keyCode);
-//	const isValidKey = (
-//		(keyCode >= 48 && keyCode <= 57) || // Numbers
-//		(keyCode >= 97 && keyCode <= 122) || // Numbers, Keypad
-//		(keyCode >= 65 && keyCode <= 90) || // Alphabet
-//		(keyCode === 32) || // Space
-//		(keyCode === 8) || // BackSpace
-//		(keyCode === 189) // Dash
-//	);
-//	if (!isValidKey) {
-//		event.preventDefault();
-//		return false;
-//	}
-//};
 
 function checkJoin(form) {
 	if (idOk && pwOk && nameOk && phoneOk && birthOk) {
