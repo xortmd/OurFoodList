@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+		sans-serif;
+	/*display: flex;*/
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+}
+
+.login-form {
+	/*     position: relative; */
+	/*     z-index: 2; */
+	/* 	margin: 30vw; */
+/* 		padding: 0 80px; */
+	margin: 30vh 20vw;
+	padding: 0 230px 0 180px;
+}
+
+.login-form h1 {
+	font-size: 32px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.form{
+	padding : 0 10vw;	
+}
+
+.int-area {
+	width: 370px;
+	position: relative;
+}
+
+.int-area input {
+	/*     width: 100%; */
+	width: 89%;
+	padding: 20px 10px 10px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #999;
+	font-size: 18px;
+	color: rgb(0, 0, 0);
+	outline: none;
+}
+
+.int-area label {
+	position: absolute;
+	left: 10px;
+	top: 15px;
+	font-size: 18px;
+	color: #999;
+	transition: all .5s ease;
+}
+
+.int-area label.warning {
+	color: red !important;
+	animation: waring .3s ease;
+	animation-iteration-count: 3;
+}
+
+.int-area input:focus+label, .int-area input:valid+label {
+	top: -2px;
+	font-size: 13px;
+	/* 	color: #166cea; */
+	color: rgb(255, 86, 34);
+}
+
+.btn-area {
+	margin-top: 30px;
+}
+
+.btn-area .button {
+	width: 340px;
+	height: 50px;
+	text-align: center;
+	background-color: rgb(255, 86, 34);
+	color: #fff;
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+}
+
+.caption {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.caption a {
+	font-size: 15px;
+	color: #999;
+	text-decoration: none;
+}
