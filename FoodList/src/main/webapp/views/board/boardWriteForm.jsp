@@ -37,7 +37,7 @@ if (session.getAttribute("log") != null) {
                     <div class="info">
                         <dl>
                             <dt>아이디</dt>
-                            <dd><input type="text" name="user_id" value="<%=log %>" readonly></dd>
+                            <dd><input type="text"  style="border: none; outline :none" name="user_id" value="<%=log %>" readonly></dd>
                         </dl>
 
                     </div>

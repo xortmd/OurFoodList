@@ -50,7 +50,7 @@ BoardDto board = dao.getBoardByNo(no);
                     <div class="info">
                         <dl>
                             <dt>아이디</dt>
-                            <dd><input type="text" name="user_id" value="<%=board.getUser_id()%>" readonly></dd>
+                            <dd><input type="text" name="user_id" style="border: none; outline :none" value="<%=board.getUser_id()%>" readonly></dd>
                         </dl>
 
                     </div>

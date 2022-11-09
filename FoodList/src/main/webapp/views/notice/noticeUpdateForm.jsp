@@ -40,11 +40,11 @@ NoticeDto notice = dao.getNoticeByNo(no);
                     <div class="info">
                         <dl>
                             <dt>아이디</dt>
-                            <dd><input type="text" name="user_id" value="<%=notice.getUser_id()%>" readonly></dd>
+                            <dd><input type="text" name="user_id" style="border: none; outline :none" value="<%=notice.getUser_id()%>" readonly></dd>
                         </dl>
                         <dl>
                             <dt>작성일자</dt>
-                            <dd><input type="datetime" name="reg_date" value="<%=notice.getReg_date()%>" readonly></dd>
+                            <dd><input type="datetime" name="reg_date"  style="border: none; outline :none" value="<%=notice.getReg_date()%>" readonly></dd>
                         </dl>
                     </div>
                     <div class="cont">
