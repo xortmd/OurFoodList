@@ -47,7 +47,7 @@ public class UpdatePasswordAction extends HttpServlet {
 		dao.updateUser(user);
 		System.out.println("수정 완료");
 		
-		response.sendRedirect("index");
+		response.sendRedirect("loginForm");
 	}
 
 	/**
