@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+*{
+	margin : 100px 0 0 0;
+	padding : 0;
+	text-align: center;
+	background-color: ivory;
+}
+
+    
+.btn {
+	justify-content : center;
+	padding-right: 30px;
+	display : flex;
+	
+}
+
+button, input{
+	background-color: rgb(255, 86, 34);
+	border: none;
+	margin: 20px;
+	color: white;
+	border-radius: 20px;
+	width: 100px;
+	height: 40px;
+}
