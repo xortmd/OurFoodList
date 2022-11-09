@@ -50,7 +50,7 @@ console.log("id : " + id);
 	        );
 	    });		
 	}else{
-		$('.title').html("작성한 게시글이 없습니다");
+		$('.title').html("아직 작성한 게시글이 없습니다:(");
 	}
 
 
