@@ -37,11 +37,7 @@ if (session.getAttribute("log") != null) {
                     <div class="info">
                         <dl>
                             <dt>아이디</dt>
-                            <dd><input type="text" name="user_id" value="<%=log%>" readonly></dd>
-                        </dl>
-                        <dl>
-                            <dt>작성일자</dt>
-                            <dd><input type="datetime" name="reg_date" readonly></dd>
+                            <dd><input type="text" style="border : none" name="user_id" value="<%=log%>" readonly></dd>
                         </dl>
                     </div>
                     <div class="cont">
