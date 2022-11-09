@@ -42,16 +42,14 @@
 		<div class="intro_bg">
 			<div class="header">
 				<div class="searchArea">
-					<form>
-						<input type="search" placeholder="search"> <span>검색</span>
-					</form>
+<!-- 					<form> -->
+<!-- <!-- 						<input type="search" placeholder="search"> <span>검색</span> --> -->
+<!-- 					</form> -->
 				</div>
 				<ul class="nav">
 <!-- 					<li><a href="ex05.html">HOME</a></li> -->
 					<li><a href="restaurantSearchForm">맛집찾기</a></li>
-					<%
-					if(log != null) {
-					%>
+					<% if(log != null) {%>
 					<li><a href="restaurantCreateForm">맛집등록</a></li>
 					<%} %>
 					<li><a href="boardForm">커뮤니티</a></li>
@@ -110,6 +108,7 @@
 		<h1></h1>
 		<!-- <div class="contents1"></div> -->
 		<ul class="icons">
+			<%int size = 10; %>
 			<li>
 				<div class="contents1_bold">평점 top10</div>
 				<div>
@@ -127,7 +126,10 @@
 						<tbody class="ranking_tbody">
 							<%
 							ArrayList<RestaurantDto> rList = rDao.sortRestaurant(allList, "평점순");
-							for(int i = 0; i < 10; i++) {%>
+							if(rList.size() < size) {
+								size = rList.size();
+							}
+							for(int i = 0; i < size; i++) {%>
 							<tr>
 								<td><%=(i+1)%>.</td>
 								<td><%=rList.get(i).getRes_name()%></td>
@@ -163,7 +165,10 @@
 						<tbody class="ranking_tbody">
 							<%
 							rList = rDao.sortRestaurant(allList, "리뷰순");
-							for(int i = 0; i < 10; i++) {%>
+							if(rList.size() < size) {
+								size = rList.size();
+							}
+							for(int i = 0; i < size; i++) {%>
 							<tr>
 								<td><%=(i+1)%>.</td>
 								<td><%=rList.get(i).getRes_name()%></td>
@@ -199,7 +204,10 @@
 						<tbody class="ranking_tbody">
 							<%
 							rList = rDao.sortRestaurant(allList, "좋아요순");
-							for(int i = 0; i < 10; i++) {%>
+							if(rList.size() < size) {
+								size = rList.size();
+							}
+							for(int i = 0; i < size; i++) {%>
 							<tr>
 								<td><%=(i+1)%>.</td>
 								<td><%=rList.get(i).getRes_name()%></td>

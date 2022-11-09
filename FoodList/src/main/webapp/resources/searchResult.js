@@ -8,6 +8,7 @@ function printResult() {
 	let sort = $('#sort').val();
 	
 	$.ajax({
+		contentType: "application/json; charset=utf-8",
 		medtod: "POST",
 		url: "RestaurantSearch",
 		data: {
@@ -21,6 +22,7 @@ function printResult() {
 		
 		$('.title').append(
 			`<tr>
+				<th>이미지</th>
 				<th>가게명</th>
 				<th>전화번호</th>
 				<th>음식종류</th>
@@ -32,6 +34,7 @@ function printResult() {
 		);
 		
 		list.forEach(e => {
+            const image_url = e.image_url;
             const code = e.code;
             const res_name = e.res_name;
 			const res_phone = e.res_phone;
@@ -44,6 +47,7 @@ function printResult() {
 
             $('.container').append(
                 `<tr>
+					<td><img src=${image_url}></td>
 					<td><a href="restaurantViewForm?code=${code}">${res_name}</a></td>
 					<td>${res_phone}</td>
 					<td>${kind}</td>

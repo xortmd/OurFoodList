@@ -23,7 +23,9 @@
 			<ul class="navbar1_manu">
 <!-- 				<li><a href="index"></a>Home</li> -->
 				<li><a href="restaurantSearchForm">맛집찾기</a></li>
-				<li><a href="restaurantCreateForm">맛집등록</a></li>
+				<% if(log != null) {%>
+					<li><a href="restaurantCreateForm">맛집등록</a></li>
+				<%} %>
 				<li><a href="boardForm">커뮤니티</a></li>
 				<li><a href="noticeForm">공지사항</a></li>
 			</ul>

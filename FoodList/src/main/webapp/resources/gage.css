@@ -54,24 +54,29 @@ table {
 	padding: 20px;
 }
 
-table>thead>tr>:nth-child(1) {
-	width: 630px;
+table>thead>tr>:nth-child(2) {
+	width: 460px;
 	color: rgb(255, 50, 0);
 }
 
-table>tbody>tr>:nth-child(1)>a {
+table>tbody>tr>:nth-child(2)>a {
 	color: rgb(255, 50, 0);
 	text-decoration: underline;
 }
 
 table>thead>tr>th {
-	padding: 40px 10px;
+	padding: 10px 10px;
 	border-bottom: 1px solid black;
 	font-size: 20;
 }
 
 table>tbody>tr>td {
-	padding: 40px 10px;
+	padding: 5px 10px;
 	border-bottom: 1px solid black;
 	font-size: 20;
+}
+
+img {
+	width: 120px;
+	height:120px;
 }
