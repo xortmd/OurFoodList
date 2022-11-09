@@ -52,7 +52,7 @@ public class LoginAction extends HttpServlet {
 		System.out.println(user.getId() + " 로그인 성공!!");
 		
 		try {
-			Thread.sleep(800);
+			Thread.sleep(400);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

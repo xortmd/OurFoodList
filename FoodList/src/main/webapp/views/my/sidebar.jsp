@@ -19,7 +19,7 @@
         <li><a href="myBoard" class="item"><div>My Board</div></a></li>
         <li><a href="myReview" class="item"><div>My Review</div></a></li>
         <li><a href="myLike" class="item"><div>My Like</div></a></li>
-        <li><a href="#" class="item"><div>설정</div></a></li>
+<!--         <li><a href="#" class="item"><div>설정</div></a></li> -->
         <li><a href="myDeleteForm" class="item"><div>회원탈퇴</div></a></li>
     </ul>
 </div>
