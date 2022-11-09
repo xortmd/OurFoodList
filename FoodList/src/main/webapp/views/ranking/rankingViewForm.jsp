@@ -23,6 +23,7 @@
         <table>
 			<thead>
 				<tr>
+					<th>이미지</th>
 					<th>가게명</th>
 					<th>전화번호</th>
 					<th>음식종류</th>
@@ -38,6 +39,7 @@
 				String date = String.valueOf(restaurant.getReg_date());
 				%>
 				<tr>
+					<td><img src=<%=restaurant.getImage_url()%>></td>
 					<td><a href="restaurantViewForm?code=<%=restaurant.getCode()%>"><%=restaurant.getRes_name()%></a></td>
 					<td><%=restaurant.getRes_phone()%></td>
 					<td><%=restaurant.getKind()%></td>

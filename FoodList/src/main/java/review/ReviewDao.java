@@ -106,7 +106,7 @@ public class ReviewDao {
 	// ALL
 	public ArrayList<ReviewDto> getReviewAll(){
 		ArrayList<ReviewDto> reviewlist = new ArrayList<ReviewDto>();
-		String sql = "SELECT * FROM review";
+		String sql = "SELECT * FROM review ORDER BY `no` DESC";
 		
 		try {
 			this.conn = DBManager.getConnection();
