@@ -33,6 +33,6 @@ BoardDto board = dao.getBoardByNo(no);
 	<button type="button" onclick="location.href='boardViewForm?no=<%=board.getNo()%>'">아니요</button>
 	</div>
 	</form>
-	
+
 </body>
 </html>
