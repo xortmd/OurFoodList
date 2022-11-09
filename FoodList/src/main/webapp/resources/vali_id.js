@@ -44,13 +44,15 @@ $('.phone').focusout(function() {
 		} else {
 			$("#checkPhone").html("");
 			// 중복 검사
+			
 			$.ajax({
 				url: "PhoneCheck",
 				type: "post",
 				data: { phone: phone }
-			}).done(e => {
-				id = e.id;
-				realName = e.realName;
+			}).done(function(response) {
+				console.log("response: ", response);
+				id = response.id;
+				realName = response.realName;
 				console.log("id : " + id);
 				console.log("realName : " + realName);
 				if(name === realName){
@@ -62,13 +64,16 @@ $('.phone').focusout(function() {
 })
 
 function checkInfo(form) {
-	let id = $('.id').val();
-	let phone = $('.phone').val();
+//	let phone = $('.phone').val();
 
 	if (NameOk) {
 		$("#checkPhone").html("고객님의 아이디는 " + id + "입니다");
 		$('#checkPhone').attr('color', 'green');
 		console.log("일치함");
+		$('.button *').remove();
+		$('.button').append(
+			`<button class="search-btn-wrap" style="margin-top:25px" onclick="location.href='login'">로그인 하러가기</button>`
+		);
 	}
 	else {
 		$("#checkPhone").html("회원정보와 일치하지 않습니다.");

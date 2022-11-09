@@ -56,14 +56,14 @@
 		<url-pattern>/Login</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>Id</servlet-name>
-		<servlet-class>controller.IdAction</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Id</servlet-name>
-		<url-pattern>/Id</url-pattern>
-	</servlet-mapping>
+<!-- 	<servlet> -->
+<!-- 		<servlet-name>Id</servlet-name> -->
+<!-- 		<servlet-class>controller.IdAction</servlet-class> -->
+<!-- 	</servlet> -->
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>Id</servlet-name> -->
+<!-- 		<url-pattern>/Id</url-pattern> -->
+<!-- 	</servlet-mapping> -->
 	
 	<servlet>
 		<servlet-name>PhoneCheck</servlet-name>
