@@ -142,10 +142,12 @@
 						</tbody>
 					</table>
 				</div>
+				<%if(size > 0) {%>
 				<form action="rankingViewForm">
 					<input type="hidden" id="sort" name="sort" value="평점순">
 					<input type="submit" value="MORE" class="more">
 				</form>
+				<%} %>
 			</li>
 
 			<li>
@@ -181,10 +183,12 @@
 						</tbody>
 					</table>
 				</div>
+				<%if(size > 0) {%>
 				<form action="rankingViewForm">
 					<input type="hidden" id="sort" name="sort" value="리뷰순">
 					<input type="submit" value="MORE" class="more">
 				</form>
+				<%} %>
 			</li>
 
 			<li>
@@ -220,10 +224,12 @@
 						</tbody>
 					</table>
 				</div>
+				<%if(size > 0) {%>
 				<form action="rankingViewForm">
 					<input type="hidden" id="sort" name="sort" value="좋아요순">
 					<input type="submit" value="MORE" class="more">
 				</form>
+				<%} %>
 			</li>
 		</ul>
 	</div>
