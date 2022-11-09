@@ -21,7 +21,7 @@
                 <label for="id"> User name</label>
             </div>
             <div class="int-area">
-                <input type="text" name="password" class="password" id="pw" autocomplete="off" required>
+                <input type="password" name="password" class="password" id="pw" autocomplete="off" required>
                 <label for="id"> password</label>
             </div>
             <font id="checkLog" size=2></font> 

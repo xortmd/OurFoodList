@@ -31,9 +31,10 @@
 				</div>
 				<div class="font">
 					<font id="checkPhone" size=2></font>
+				</div>				
+				<div class="button">
+					<input class="search-btn-wrap" type="button" style="margin-top:25px" onclick="checkInfo()" value="아이디 찾기">
 				</div>
-				
-				<input class="search-btn-wrap" type="button" style="margin-top:25px" onclick="checkInfo(form)" value="아이디 찾기" class="제출">
 			</form>
 			<script src="vali_id.js"></script>
 		</div>

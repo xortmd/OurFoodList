@@ -24,7 +24,7 @@ if(request.getParameter("id")!=null){
 	<!-- 헤더 풋터 아직 만들기 전이라 주석처리 -->
 	<section class="Joinup2"> 
 		<div class="form-container">
-            <h2 style="margin-bottom: 20px">비밀번호재설정</h2>
+            <h2 style="margin-bottom: 20px; margin-top: 300px;">비밀번호 재설정</h2>
 			<form method="post" action="UpdatePassword" class="form">
 				<div class="pws" style="margin-top:15px">
 					<label>새 비밀번호</label>

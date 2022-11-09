@@ -16,7 +16,7 @@
 	<!-- 헤더 풋터 아직 만들기 전이라 주석처리 -->
 	<section class="Joinup2"> 
 		<div class="form-container">
-            <h2 style="margin-bottom: 20px">비밀번호 찾기</h2>
+            <h2 style="margin-bottom: 20px; margin-top: 300px;">비밀번호 찾기</h2>
 			<form method="post" action="updatePasswordForm" class="form">
 				<div class="idd">
 					<label>아이디</label>
