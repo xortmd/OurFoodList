@@ -50,7 +50,7 @@
 					<option value="좋아요순">좋아요순</option>
 					<option value="리뷰순">리뷰순</option>
 				</select>
-				<input type="button" onclick="printResult()" value="검색"></input>
+				<input type="button" onclick="printResult()" value="검색" style="cursor: pointer"></input>
 			</form>
 		</div>
 		<hr>

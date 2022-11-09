@@ -61,9 +61,9 @@ if (session.getAttribute("log") != null) {
 				readonly> <br>
 			<textarea name="coment" placeholder="내용을 입력해주세요." required></textarea>
 			<div class="button">
-				<input type="submit" class="reviewSubmit" value="리뷰 작성"
+				<input type="submit" class="reviewSubmit" id="button" value="리뷰 작성"
 					onclick="alert('리뷰 작성 완료')"> <input type="button"
-					onclick="location.href='restaurantSearchForm'" value="돌아가기">
+					onclick="location.href='restaurantSearchForm'" id="button" value="돌아가기">
 			</div>
 		</form>
 		<%

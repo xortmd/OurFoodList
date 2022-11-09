@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 import user.UserDao;
+import user.UserDto;
 
 /**
  * Servlet implementation class JoinCheckAction
@@ -64,6 +65,7 @@ public class JoinCheckAction extends HttpServlet {
 		String duplPhone = request.getParameter("duplPhone");
 
 		duplPhone = dao.getUserByPhone(phone) + "";
+		
 
 		if (dao.getUserByPhone(phone)) {
 			System.out.println("중복 핸드폰 번호");
