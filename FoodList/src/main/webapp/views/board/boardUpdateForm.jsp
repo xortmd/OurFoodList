@@ -21,6 +21,7 @@ BoardDto board = dao.getBoardByNo(no);
 <link rel="stylesheet" href="resources/board.css">
 <title><%=board.getTitle()%></title>
 </head>
+<jsp:include page="/views/header.jsp"/>
 <body>
 
 

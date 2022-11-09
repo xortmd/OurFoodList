@@ -21,6 +21,7 @@ NoticeDto notice = dao.getNoticeByNo(no);
 <link rel="stylesheet" href="resources/board.css">
 <title><%=notice.getTitle()%></title>
 </head>
+<jsp:include page="/views/header.jsp"/>
 <body>
 
 <form class="write" action="NoticeUpdate">
