@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import board.BoardDao;
+import like.LikeDao;
+import review.ReviewDao;
 import user.UserDao;
+import user.UserDto;
 
 /**
  * Servlet implementation class UserDeleteAction
@@ -39,7 +43,14 @@ public class UserDeleteAction extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.invalidate();
-		dao.deleteUser(id, password);
+		System.out.println("너 여기 왔니?");
+		
+		UserDto user = dao.getUserByIdPw(id, password);
+		user.setPhone("");
+		user.setPassword("****");
+		dao.updateUser(user);
+		
+		// 회원 삭제 X, 회원 비밀번호를 ****로 바꿔서 탈퇴 아이디의 로그인을 막는다
 		
 		response.sendRedirect("index");
 	}

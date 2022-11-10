@@ -200,7 +200,13 @@ function checkLogin(form) {
 				$('#checkLog').html('로그인 정보를 확인하세요');
 				$('#checkLog').attr('color', 'red');
 			} else {
-				form.submit();
+				if(password === "****"){
+					console.log("탈퇴 회원임");		
+					$('#checkLog').html('로그인 정보를 확인하세요');
+					$('#checkLog').attr('color', 'red');		
+				}else{
+					form.submit();					
+				}
 			}
 		})
 	} else {

@@ -266,7 +266,7 @@ public class UserDao {
 			this.rs = this.pstmt.executeQuery();
 			
 			if(this.rs.next()) {
-				countUser = this.rs.getInt(1);
+				countUser = this.rs.getInt(1) - getCountDltUser();				
 			}
 			
 		} catch (Exception e) {
@@ -281,6 +281,32 @@ public class UserDao {
 			}
 		}
 		return countUser;
+	}
+	
+	public int getCountDltUser() {
+		int dltUser = 0;
+		String sql = "SELECT COUNT(id) FROM `user` WHERE password= '****' ";
+		
+		try {
+			this.conn = DBManager.getConnection();
+			this.pstmt = this.conn.prepareStatement(sql);
+			this.rs = this.pstmt.executeQuery();
+			
+			if(this.rs.next()) {
+				dltUser = this.rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				this.rs.close();
+				this.conn.close();
+				this.pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return dltUser;
 	}
 
 	// Update
