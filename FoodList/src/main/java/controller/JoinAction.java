@@ -40,14 +40,11 @@ public class JoinAction extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		System.out.println("가입 서블릿 도착");
-
 		String id = request.getParameter("id");
 		String password= request.getParameter("password");
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
 		Timestamp birth = Timestamp.valueOf(request.getParameter("birth")+" 00:00:00");
-		System.out.println("birth : " + birth);
 		
 		Timestamp now = new Timestamp(System.currentTimeMillis());
 		
@@ -56,7 +53,6 @@ public class JoinAction extends HttpServlet {
 		UserDao dao = UserDao.getInstance();
 		
 		dao.createUser(user);
-		System.out.println("회원가입 완료");
 		request.getRequestDispatcher("loginForm").forward(request, response);
 
 		

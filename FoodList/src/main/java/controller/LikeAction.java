@@ -39,36 +39,17 @@ public class LikeAction extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		System.out.println("좋아요 목록 출력해 보자구!");
-		
+
 		String id = request.getParameter("id");
-		
-		System.out.println("id : " + id);
-		
-		LikeDao likeDao = LikeDao.getInstance();
-		
+		LikeDao likeDao = LikeDao.getInstance();		
 		ArrayList<RestaurantDto> list = likeDao.myLikeRestaurant(id);
-		
-	
-//		RestaurantDao restoDao = RestaurantDao.getInstance();
-//		ArrayList<LikeDto> LikeList = likeDao.getLikeById(id); 
-//		
-//		ArrayList<RestaurantDto> list = new ArrayList<RestaurantDto>();
-//		for(LikeDto like : LikeList) {
-//			RestaurantDto temp = restoDao.getRestaurantByCode(like.getResto_code());
-//			list.add(temp);
-//		}
-		
-		System.out.println("********여기");
+
 		
 		if(list.size() > 0) {
-			System.out.println("제이슨 만든다");
 			JSONArray json = new JSONArray(list);	
 			System.out.println(json.toString());
 			response.getWriter().append(json.toString());
 		}else {
-			System.out.println("값이 없다");
 			response.getWriter().append("null");
 		}
 		

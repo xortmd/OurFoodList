@@ -103,7 +103,7 @@ public class UserDao {
 	// 2-1. 개인 유저조회 (아이디, 패스워드)
 	public UserDto getUserByIdPw(String id, String password) {
 		UserDto user = null;
-		String sql = "SELECT * FROM `user` WHERE id = ? and `password`= ?"; // <- , ?? && ??>
+		String sql = "SELECT * FROM `user` WHERE id = ? and `password`= ?"; 
 
 		try {
 			this.conn = DBManager.getConnection();
@@ -139,9 +139,7 @@ public class UserDao {
 	// 2-2. 아이디 조회 (아이디)
 	public UserDto getUserById(String id) {
 		UserDto user = null;
-//		boolean dupl = false;
 		String sql = "SELECT * FROM `user` WHERE id = ?";
-//		use myFavResto;
 
 		try {
 			this.conn = DBManager.getConnection();
@@ -155,9 +153,8 @@ public class UserDao {
 				String phone = this.rs.getString(4);
 				Timestamp birth = this.rs.getTimestamp(5);
 				Timestamp reg_date = this.rs.getTimestamp(6);
-//				
+				
 				user = new UserDto(id, password, name, phone, birth, reg_date);
-//				dupl = true;
 			}
 
 		} catch (Exception e) {
@@ -177,10 +174,8 @@ public class UserDao {
 
 	// 2-3 전화번호 조회
 	public boolean getUserByPhone(String phone) {
-//		UserDto user = null;
 		boolean dupl = false;
 		String sql = "SELECT * FROM `user` WHERE phone = ?";
-//		use myFavResto;
 
 		try {
 			this.conn = DBManager.getConnection();
@@ -189,15 +184,6 @@ public class UserDao {
 			this.rs = this.pstmt.executeQuery();
 
 			if (this.rs.next()) {
-//				String password= this.rs.getString(2);
-				String name = this.rs.getString(3);
-//				String phone = this.rs.getString(4);
-				Timestamp birth = this.rs.getTimestamp(5);
-				Timestamp reg_date = this.rs.getTimestamp(6);
-				System.out.println("핸드폰 번호 중복되는 유저 이름 : " + name);
-				System.out.println("핸드폰 번호(dao) : " + phone);
-
-//				user = new UserDto(id, password, name, phone, birth, reg_date);
 				dupl = true;
 			}
 
@@ -218,8 +204,8 @@ public class UserDao {
 
 	// 2-4 전화번호 조회로 유저 조회
 	public UserDto getUserDtoByPhone(String phone) {
+		String sql = "SELECT * FROM `user` WHERE phone = ?";
 			UserDto user = null;
-			String sql = "SELECT * FROM `user` WHERE phone = ?";
 
 			try {
 				this.conn = DBManager.getConnection();

@@ -7,9 +7,13 @@ public class DBManager {
 	public static Connection getConnection() {
 		Connection conn = null;
 			
-		String url = "jdbc:mysql://database-1.cjdszylzp7ot.ap-northeast-2.rds.amazonaws.com:3306/myFavResto";
-		String user = "admin";
-		String password = "8Ba&$#W1m#c4";
+//		String url = "jdbc:mysql://database-1.cjdszylzp7ot.ap-northeast-2.rds.amazonaws.com:3306/myFavResto";
+//		String user = "admin";
+//		String password = "8Ba&$#W1m#c4";
+		
+		String url = "jdbc:mysql://localhost:3306/foodlist";
+		String user = "root";
+		String password = "root";
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

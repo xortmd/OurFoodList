@@ -35,7 +35,6 @@ public class PhoneCheckAction extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("핸드폰 번호로 아이디 찾기 서블릿 도착");
 
 		String phone = request.getParameter("phone");
 
@@ -44,7 +43,6 @@ public class PhoneCheckAction extends HttpServlet {
 		UserDto user = dao.getUserDtoByPhone(phone);
 
 		realName = user.getName();
-		System.out.println("진짜 이름 : " + realName);
 		String id = request.getParameter("id");
 		id = user.getId();
 		
@@ -53,8 +51,6 @@ public class PhoneCheckAction extends HttpServlet {
 		JSONObject json = new JSONObject();
 		json.put("realName", realName);
 		json.put("id", id);
-
-		System.out.println(json.toString());
 
 		response.getWriter().append(json.toString());
 

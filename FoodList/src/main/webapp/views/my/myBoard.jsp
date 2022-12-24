@@ -16,7 +16,6 @@
 	String log = null;
 	if (session.getAttribute("log") != null) {
 		log = (String) session.getAttribute("log");
-		System.out.println("log : " + log);
 	}
 	%>
 	<jsp:include page="/views/header.jsp" />

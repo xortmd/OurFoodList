@@ -36,13 +36,10 @@ public class LoginCheckAction extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		System.out.println("로그인 정보 확인하러 왔습니다~");
 
 		String id = request.getParameter("id");
-		System.out.println("id : " + id);
 
 		String password = request.getParameter("password");
-		System.out.println("password : " + password);
 
 		UserDao dao = UserDao.getInstance();
 		UserDto user = dao.getUserByIdPw(id, password);
@@ -55,7 +52,6 @@ public class LoginCheckAction extends HttpServlet {
 			json.put("ok", false);
 		}
 		
-		System.out.println(json.toString());
 		response.getWriter().append(json.toString());
 	}
 

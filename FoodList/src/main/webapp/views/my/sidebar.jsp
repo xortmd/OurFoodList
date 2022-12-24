@@ -13,7 +13,7 @@
 </head>
 <body> 
 <div class="menu">
-    <label for="expand-menu"><div>메뉴</div></label><input type="checkbox" id="expand-menu" name="expand-menu">
+   <!-- <label for="expand-menu"><div>메뉴</div></label><input type="checkbox" id="expand-menu" name="expand-menu"> -->
     <ul>
         <li><a href="myPageForm" class="item"><div>프로필</div></a></li>
         <li><a href="myBoard" class="item"><div>My Board</div></a></li>

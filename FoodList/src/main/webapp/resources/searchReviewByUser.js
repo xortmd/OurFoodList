@@ -4,10 +4,7 @@
 $('.title').empty();
 $('.container').empty();
 
-console.log("이제 곧 리뷰 목록 찍을거야");
-
 let id = $('.id').val();
-console.log("id : " + id);
 
 $.ajax({
 	url: "Review",
@@ -15,13 +12,10 @@ $.ajax({
 	data: { id: id }
 }).done(function(response) {
 	const list = JSON.parse(response);
-
-	console.log("list : " + list);
-
 	if (list != null) {
 		$('.title').append(
 			`<tr>
-				<th>가게이름</th>
+				<th>가게명</th>
 				<th>코멘트</th>
 				<th>등록일</th>
 				<th>평점</th>
@@ -31,11 +25,10 @@ $.ajax({
 		list.forEach(e => {
 			const no = e.no;
 			const code = e.resto_code;
-			const res_name = e.user_id;		// 아이디는 굳이 필요 없으니까 여기에 레스토랑 이름 담아가지고 옴
+			const res_name = e.user_id;		
 			const comment = e.coment;
 			const reg_date = e.reg_date.split(" ")[0];
 			const give_grade = e.give_grade;
-
 
 			$('.container').append(
 				`<tr>

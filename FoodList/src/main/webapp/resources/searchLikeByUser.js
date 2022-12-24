@@ -3,11 +3,7 @@
  */
 $('.title').empty();
 $('.container').empty();
-
-console.log("이제 곧 좋아요 목록 찍을거야");
-
 let id = $('.id').val();
-console.log("id : " + id);
 
 $.ajax({
 	url: "Like",
@@ -15,9 +11,6 @@ $.ajax({
 	data: { id: id }
 }).done(function(response) {
 	const list = JSON.parse(response);
-
-	console.log("list : " + list);
-
 	if (list != null) {
 		$('.title').append(
 			`<tr>
@@ -50,5 +43,4 @@ $.ajax({
 	} else {
 		$('.title').html("아직 좋아요한 맛집이 없습니다:(");
 	}
-
 })

@@ -39,36 +39,28 @@ public class ReviewAction extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		System.out.println("리뷰 목록 출력해 보자구!");
-		
+
 		String id = request.getParameter("id");
-		
-		System.out.println("id : " + id);
-		
 		ReviewDao dao = ReviewDao.getInstance();
 		RestaurantDao res_dao = RestaurantDao.getInstance(); 
 		
-		ArrayList<ReviewDto> list = dao.getReviewAllByUser_id(id);		// 이게 아니야
-		// 글 번호, 상호명(여기서 이름만 가져와야함), 리뷰코멘트, 등록일, 평점
+		ArrayList<ReviewDto> list = dao.getReviewAllByUser_id(id);		
+		// 글 번호, 상호명, 리뷰코멘트, 등록일, 평점
 		
 		ArrayList<ReviewDto> temp = new ArrayList<ReviewDto>();
 		
 		for(ReviewDto l : list) {
 			int resto_code = l.getResto_code();
 			RestaurantDto resto = res_dao.getRestaurantByCode(resto_code);
-			ReviewDto dto = new ReviewDto(l.getNo(), l.getResto_code(), l.getComent(), resto.getRes_name(), l.getReg_date(), l.getGive_grade());
-			
+			ReviewDto dto = new ReviewDto(l.getNo(), l.getResto_code(), 
+					l.getComent(), resto.getRes_name(), l.getReg_date(), l.getGive_grade());			
 			temp.add(dto);
 		}
 		
 		if(list.size() > 0) {
-			System.out.println("제이슨 만든다");
 			JSONArray json = new JSONArray(temp);	
-			System.out.println(json.toString());
 			response.getWriter().append(json.toString());
 		}else {
-			System.out.println("값이 없다");
 			response.getWriter().append("null");
 		}
 	}

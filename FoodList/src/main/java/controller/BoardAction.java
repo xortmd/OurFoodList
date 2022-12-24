@@ -36,26 +36,14 @@ public class BoardAction extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		System.out.println("게시글 목록 출력해 보자구!");
-		
 		String id = request.getParameter("id");
-		
-		System.out.println("id : " + id);
-		
 		BoardDao dao = BoardDao.getInstance();
-		
 		ArrayList<BoardDto> list = dao.getBoardById(id);
 		
-		
-		System.out.println("********여기");
-		
 		if(list.size() > 0) {
-			System.out.println("제이슨 만든다");
 			JSONArray json = new JSONArray(list);	
-			System.out.println(json.toString());
 			response.getWriter().append(json.toString());
 		}else {
-			System.out.println("값이 없다");
 			response.getWriter().append("null");
 		}
 		

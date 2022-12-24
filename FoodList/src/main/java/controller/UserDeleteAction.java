@@ -43,7 +43,6 @@ public class UserDeleteAction extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.invalidate();
-		System.out.println("너 여기 왔니?");
 		
 		UserDto user = dao.getUserByIdPw(id, password);
 		user.setPhone("");

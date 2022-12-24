@@ -24,21 +24,16 @@ $('.name').focusout(function() {
 let phoneOk = false;
 let realName = "";
 $('.phone').focusout(function() {
-	console.log("연락처에서 포커스아웃 발생");
 	let phone = $('.phone').val();
 
 	if (phone == "") {
-		console.log("phone : " + phone);
 		$("#checkPhone").html("전화번호를 입력하세요");
 		$('#checkPhone').attr('color', 'red');
 	} else {
 		if (phone.length != 13) {
-			console.log("길이 : " + phone.length);
 			$("#checkPhone").html("입력한 전화번호를 확인하세요");
 			$('#checkPhone').attr('color', 'red');
 		} else if (phone.charAt(3) != '-' || phone.charAt(8) != '-') {
-			console.log("3번째 : " + phone.charAt(3));
-			console.log("8번째 : " + phone.charAt(8));
 			$("#checkPhone").html("전화번호 형식에 맞지 않습니다.");
 			$('#checkPhone').attr('color', 'red');
 		} else {
@@ -50,11 +45,8 @@ $('.phone').focusout(function() {
 				type: "post",
 				data: { phone: phone }
 			}).done(function(response) {
-				console.log("response: ", response);
 				id = response.id;
 				realName = response.realName;
-				console.log("id : " + id);
-				console.log("realName : " + realName);
 				if(name === realName){
 					NameOk = true;
 				}

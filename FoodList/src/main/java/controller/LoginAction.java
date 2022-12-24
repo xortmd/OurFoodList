@@ -34,29 +34,22 @@ public class LoginAction extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("로그인 하러 왔습니다~");
 		
 		String id = request.getParameter("id");
-		System.out.println("id : " + id);
 
 		String password = request.getParameter("password");
-		System.out.println("password : " + password);
 
 		UserDao dao = UserDao.getInstance();
 		UserDto user = dao.getUserByIdPw(id, password);
 		
-		
 		HttpSession session = request.getSession();
 		session.setAttribute("log", user.getId());
-
-		System.out.println(user.getId() + " 로그인 성공!!");
 		
 		try {
 			Thread.sleep(400);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		
 		request.getRequestDispatcher("index").forward(request, response);
 
