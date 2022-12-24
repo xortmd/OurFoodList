@@ -6,7 +6,7 @@
 function checkInfo(form) {
 	let password = $('.delete_password').val();
 	let user_pw = $('.user_pw').val();
-
+ 
 	if (password == "") {
 		$('#checkInfo').html("탈퇴시 비밀번호 입력은 필수입니다");
 		$('#checkInfo').attr("color", "red");
